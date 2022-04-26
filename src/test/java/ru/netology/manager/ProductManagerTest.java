@@ -41,6 +41,21 @@ class ProductManagerTest {
         Product actual = repository.findById(4);
         assertEquals(expected, actual);
     }
+    @Test
+    void findByIdNull() {
+
+        Product expected = null;
+        Product actual = repository.findById(0);
+        assertEquals(expected, actual);
+    }
+    @Test
+    void findByUnderId() {
+
+        Product expected = null;
+        Product actual = repository.findById(-1);
+        assertEquals(expected, actual);
+    }
+
 
     @Test
     void removeById() {
